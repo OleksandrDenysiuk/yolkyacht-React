@@ -1,0 +1,36 @@
+{
+  "name": "alliedyacht",
+  "version": "1.0.0",
+  "description": "Allied Yacht Website",
+  "private": true,
+  "scripts": {
+    "server-install": "npm install --prefix ./server",
+    "client-web-install": "npm install --prefix ./client-web",
+    "client-mobile-install": "npm install --prefix ./client-mobile",
+    "server-test": "npm test --prefix ./server",
+    "client-web-test": "npm test --prefix ./client-web",
+    "client-mobile-test": "npm test --prefix ./client-mobile",
+    "server": "npm start --prefix ./server",
+    "client-web": "npm start --prefix ./client-web",
+    "client-mobile": "npm start --prefix ./client-mobile",
+    "dev": "concurrently \"npm run server\" \"npm run client-web\"",
+    "test": "npm run server-test ; npm run client-web-test ; npm run client-mobile-test",
+    "postinstall": "npm run server-install && npm run client-web-install && npm run client-mobile-install",
+    "start": "npm run server",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build --prefix client-web"
+  },
+  "dependencies": {
+    "concurrently": "^5.0.0",
+    "react-scroll": "^1.7.14"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.6.0",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-flowtype": "^4.4.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.3.0"
+  }
+}

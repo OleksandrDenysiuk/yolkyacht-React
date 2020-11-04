@@ -1,0 +1,10 @@
+build:
+  docker:
+    #db: Dockerfile
+    server: server/Dockerfile-dev
+    web: client-web/Dockerfile-dev
+run:
+  server: npm start
+  web: npm run start
+
+
